@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/isuruthiwa/Documents/tft/expt_settings/../outputs/saved_models/electricity/fixed/TemporalFusionTransformer.ckpt"
+all_model_checkpoint_paths: "/home/isuruthiwa/Documents/tft/expt_settings/../outputs/saved_models/electricity/fixed/TemporalFusionTransformer.ckpt"
