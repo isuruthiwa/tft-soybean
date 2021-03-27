@@ -23,19 +23,20 @@ class SoybeanFormatter(GenericDataFormatter):
     """
 
     _column_definition = [
-        ('loc_ID', DataTypes.CATEGORICAL, InputTypes.ID),
+        ('id', DataTypes.CATEGORICAL, InputTypes.ID),
+        ('loc_ID', DataTypes.CATEGORICAL, InputTypes.STATIC_INPUT),
         ('date', DataTypes.REAL_VALUED, InputTypes.TIME),
         ('yield', DataTypes.REAL_VALUED, InputTypes.TARGET),
         ('bdod_mean_0-5cm', DataTypes.REAL_VALUED, InputTypes.OBSERVED_INPUT),
-        ('cec_mean_0-5cm', DataTypes.REAL_VALUED, InputTypes.STATIC_INPUT),
+        ('cec_mean_0-5cm', DataTypes.CATEGORICAL, InputTypes.KNOWN_INPUT),
         ('cfvo_mean_0-5cm', DataTypes.REAL_VALUED, InputTypes.OBSERVED_INPUT),
         ('clay_mean_0-5cm', DataTypes.REAL_VALUED, InputTypes.OBSERVED_INPUT),
         ('nitrogen_mean_0-5cm', DataTypes.REAL_VALUED, InputTypes.OBSERVED_INPUT),
         ('ocd_mean_0-5cm', DataTypes.REAL_VALUED, InputTypes.OBSERVED_INPUT),
         ('phh2o_mean_0-5cm', DataTypes.REAL_VALUED, InputTypes.OBSERVED_INPUT),
         ('sand_mean_0-5cm', DataTypes.REAL_VALUED, InputTypes.OBSERVED_INPUT),
-        ('silt_mean_0-5cm', DataTypes.REAL_VALUED, InputTypes.KNOWN_INPUT),
-        ('soc_mean_0-5cm', DataTypes.REAL_VALUED, InputTypes.KNOWN_INPUT),
+        ('silt_mean_0-5cm', DataTypes.REAL_VALUED, InputTypes.OBSERVED_INPUT),
+        ('soc_mean_0-5cm', DataTypes.REAL_VALUED, InputTypes.OBSERVED_INPUT),
     ]
 
     def __init__(self):
