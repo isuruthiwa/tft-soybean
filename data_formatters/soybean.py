@@ -6,6 +6,7 @@ Defines dataset specific column definitions and data transformations.
 
 import data_formatters.base
 import libs.utils as utils
+import pandas as pd
 import sklearn.preprocessing
 
 GenericDataFormatter = data_formatters.base.GenericDataFormatter
@@ -47,8 +48,9 @@ class SoybeanFormatter(GenericDataFormatter):
         self._cat_scalers = None
         self._target_scaler = None
         self._num_classes_per_cat_input = None
+        self._time_steps = self.get_fixed_params()['total_time_steps']
 
-    def split_data(self, df, valid_boundary=2016, test_boundary=2018):
+    def split_data(self, df, valid_boundary=2010, test_boundary=2015):
         """Splits data frame into training-validation-test data frames.
 
         This also calibrates scaling object, and transforms data for each split.
@@ -63,7 +65,6 @@ class SoybeanFormatter(GenericDataFormatter):
         """
 
         print('Formatting train-valid-test splits.')
-        print(df.columns)
 
         index = df['year']
         train = df.loc[index < valid_boundary]
@@ -81,8 +82,6 @@ class SoybeanFormatter(GenericDataFormatter):
           df: Data to use to calibrate scalers.
         """
         print('Setting scalers with training data...')
-        print(df.columns)
-
 
         column_definitions = self.get_column_definition()
         id_column = utils.get_single_col_by_input_type(InputTypes.ID,
@@ -90,8 +89,6 @@ class SoybeanFormatter(GenericDataFormatter):
         target_column = utils.get_single_col_by_input_type(InputTypes.TARGET,
                                                            column_definitions)
 
-        print(df.columns)
-        print(df[id_column])
         # Extract identifiers in case required
         self.identifiers = list(df[id_column].unique())
 
@@ -105,6 +102,8 @@ class SoybeanFormatter(GenericDataFormatter):
         self._target_scaler = sklearn.preprocessing.StandardScaler().fit(
             df[[target_column]].values)  # used for predictions
 
+        print("TARGET_COLUMNS")
+        print(df[[target_column]].values)
         # Format categorical scalers
         categorical_inputs = utils.extract_cols_from_data_type(
             DataTypes.CATEGORICAL, column_definitions,
@@ -183,8 +182,8 @@ class SoybeanFormatter(GenericDataFormatter):
         """Returns fixed model parameters for experiments."""
 
         fixed_params = {
-            'total_time_steps': 252 + 5,
-            'num_encoder_steps': 252,
+            'total_time_steps': 5,
+            'num_encoder_steps': 2,
             'num_epochs': 100,
             'early_stopping_patience': 5,
             'multiprocessing_workers': 5,
@@ -206,4 +205,3 @@ class SoybeanFormatter(GenericDataFormatter):
         }
 
         return model_params
-

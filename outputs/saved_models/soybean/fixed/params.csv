@@ -1,4 +1,4 @@
-,"[763, 741]_[('id', <DataTypes.CATEGORICAL: 1>, <InputTypes.ID: 4>), ('date', <DataTypes.REAL_VALUED: 0>, <InputTypes.TIME: 5>), ('yield', <DataTypes.REAL_VALUED: 0>, <InputTypes.TARGET: 0>), ('bdod_mean_0-5cm', <DataTypes.REAL_VALUED: 0>, <InputTypes.OBSERVED_INPUT: 1>), ('cfvo_mean_0-5cm', <DataTypes.REAL_VALUED: 0>, <InputTypes.OBSERVED_INPUT: 1>), ('clay_mean_0-5cm', <DataTypes.REAL_VALUED: 0>, <InputTypes.OBSERVED_INPUT: 1>), ('nitrogen_mean_0-5cm', <DataTypes.REAL_VALUED: 0>, <InputTypes.OBSERVED_INPUT: 1>), ('ocd_mean_0-5cm', <DataTypes.REAL_VALUED: 0>, <InputTypes.OBSERVED_INPUT: 1>), ('phh2o_mean_0-5cm', <DataTypes.REAL_VALUED: 0>, <InputTypes.OBSERVED_INPUT: 1>), ('sand_mean_0-5cm', <DataTypes.REAL_VALUED: 0>, <InputTypes.OBSERVED_INPUT: 1>), ('silt_mean_0-5cm', <DataTypes.REAL_VALUED: 0>, <InputTypes.OBSERVED_INPUT: 1>), ('soc_mean_0-5cm', <DataTypes.REAL_VALUED: 0>, <InputTypes.OBSERVED_INPUT: 1>), ('loc_ID', <DataTypes.CATEGORICAL: 1>, <InputTypes.STATIC_INPUT: 3>), ('cec_mean_0-5cm', <DataTypes.CATEGORICAL: 1>, <InputTypes.KNOWN_INPUT: 2>)]_0.3_5_5_[0]_12_[0, 1]_[]_0.01_0.01_64_/home/isuruthiwa/Documents/tft/expt_settings/../outputs/saved_models/soybean/fixed_5_252_1_1_1_1_[10]_257"
+,"[763, 741]_[('id', <DataTypes.CATEGORICAL: 1>, <InputTypes.ID: 4>), ('date', <DataTypes.REAL_VALUED: 0>, <InputTypes.TIME: 5>), ('yield', <DataTypes.REAL_VALUED: 0>, <InputTypes.TARGET: 0>), ('bdod_mean_0-5cm', <DataTypes.REAL_VALUED: 0>, <InputTypes.OBSERVED_INPUT: 1>), ('cfvo_mean_0-5cm', <DataTypes.REAL_VALUED: 0>, <InputTypes.OBSERVED_INPUT: 1>), ('clay_mean_0-5cm', <DataTypes.REAL_VALUED: 0>, <InputTypes.OBSERVED_INPUT: 1>), ('nitrogen_mean_0-5cm', <DataTypes.REAL_VALUED: 0>, <InputTypes.OBSERVED_INPUT: 1>), ('ocd_mean_0-5cm', <DataTypes.REAL_VALUED: 0>, <InputTypes.OBSERVED_INPUT: 1>), ('phh2o_mean_0-5cm', <DataTypes.REAL_VALUED: 0>, <InputTypes.OBSERVED_INPUT: 1>), ('sand_mean_0-5cm', <DataTypes.REAL_VALUED: 0>, <InputTypes.OBSERVED_INPUT: 1>), ('silt_mean_0-5cm', <DataTypes.REAL_VALUED: 0>, <InputTypes.OBSERVED_INPUT: 1>), ('soc_mean_0-5cm', <DataTypes.REAL_VALUED: 0>, <InputTypes.OBSERVED_INPUT: 1>), ('loc_ID', <DataTypes.CATEGORICAL: 1>, <InputTypes.STATIC_INPUT: 3>), ('cec_mean_0-5cm', <DataTypes.CATEGORICAL: 1>, <InputTypes.KNOWN_INPUT: 2>)]_0.3_5_5_[0]_12_[0, 1]_[]_0.01_0.01_64_/home/isuruthiwa/Documents/tft/expt_settings/../outputs/saved_models/soybean/fixed_5_2_1_1_1_1_[10]_5"
 dropout_rate,0.3
 hidden_layer_size,5
 learning_rate,0.01
@@ -7,8 +7,8 @@ minibatch_size,64
 model_folder,/home/isuruthiwa/Documents/tft/expt_settings/../outputs/saved_models/soybean/fixed
 num_heads,1
 stack_size,1
-total_time_steps,257
-num_encoder_steps,252
+total_time_steps,5
+num_encoder_steps,2
 num_epochs,1
 early_stopping_patience,5
 multiprocessing_workers,5
